@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 96" role="img" aria-label="Dor-Shada Resort by The Sea">
+  <defs>
+    <linearGradient id="dsGold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#e8d5a8"/>
+      <stop offset="55%" stop-color="#c9a86c"/>
+      <stop offset="100%" stop-color="#a8894a"/>
+    </linearGradient>
+    <linearGradient id="dsSea" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#3ecfc0"/>
+      <stop offset="100%" stop-color="#1a9aaa"/>
+    </linearGradient>
+  </defs>
+  <!-- Thin sea-line accent under wordmark — brand heart: Resort by The Sea -->
+  <text x="0" y="48" font-family="Georgia, 'Times New Roman', serif" font-size="42" font-weight="600" letter-spacing="0.08em" fill="url(#dsGold)">DOR-SHADA</text>
+  <text x="0" y="78" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="13" font-weight="500" letter-spacing="0.28em" fill="#8eb8b4">RESORT BY THE SEA</text>
+  <rect x="0" y="88" width="168" height="2" rx="1" fill="url(#dsSea)" opacity="0.85"/>
+</svg>

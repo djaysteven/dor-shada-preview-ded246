@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta name="robots" content="noindex,nofollow,noarchive">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem("pattaya-demo-theme");
+        if (t !== "light" && t !== "dark") t = "dark";
+        document.documentElement.setAttribute("data-theme", t);
+        document.documentElement.style.colorScheme = t;
+      } catch (e) {
+        document.documentElement.setAttribute("data-theme", "dark");
+        document.documentElement.style.colorScheme = "dark";
+      }
+    })();
+  </script>
+  <meta name="color-scheme" content="dark light" />
+  <title>Dor-Shada Resort by The Sea | Na Jomtien</title>
+  <meta name="description" content="Dor-Shada Resort by The Sea — 5-star Thai-style resort in Na Jomtien with outdoor pool, spa, fitness, and beachfront dining. Sukhumvit Road, Chonburi." />
+  <meta name="keywords" content="Dor-Shada Resort, Na Jomtien, Jomtien resort, pool access rooms, ดอร์ชาดา รีสอร์ท, นาจอมเทียน" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Manrope:wght@300;400;500;600;700&family=Noto+Sans+Thai:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="lush-mesh" aria-hidden="true"></div>
+  <div id="themeLive" class="visually-hidden" aria-live="polite"></div>
+
+  <header class="site-header" id="header">
+    <div class="container nav">
+      <a href="#top" class="logo" data-i18n-aria="aria.home" aria-label="Dor-Shada Resort by The Sea home">
+        <img class="logo-img logo-img--ds" src="logo.png" width="260" height="48" alt="Dor-Shada Resort by The Sea" decoding="async" />
+      </a>
+      <nav class="nav-links" data-i18n-aria="aria.primaryNav" aria-label="Primary">
+        <a href="#amenities" data-i18n="nav.amenities">Amenities</a>
+        <a href="#rooms" data-i18n="nav.rooms">Rooms</a>
+        <a href="#gallery" data-i18n="nav.gallery">Gallery</a>
+        <a href="#about" data-i18n="nav.about">About</a>
+        <a href="#inquiry" data-i18n="nav.book">Book</a>
+        <a href="#contact" data-i18n="nav.contact">Contact</a>
+        <a href="compare.html" class="nav-compare" data-i18n="nav.compare">Compare live vs upgrade</a>
+      </nav>
+      <div class="header-tools">
+        <div class="theme-switch theme-switch--header" role="group" data-i18n-aria="theme.appearance" aria-label="Appearance">
+          <span class="theme-switch__label" data-i18n="theme.appearance">Appearance</span>
+          <div class="theme-switch__seg" role="presentation">
+            <button type="button" class="theme-btn" data-theme-set="dark" aria-pressed="true" title="Dark" aria-label="Dark">
+              <svg class="theme-btn__icon" width="14" height="14" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 14.5A8.5 8.5 0 1 1 9.5 3 7 7 0 0 0 21 14.5z"/></svg>
+              <span class="theme-btn__text" data-i18n="theme.dark">Dark</span>
+            </button>
+            <button type="button" class="theme-btn" data-theme-set="light" aria-pressed="false" title="Light" aria-label="Light">
+              <svg class="theme-btn__icon" width="14" height="14" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+              <span class="theme-btn__text" data-i18n="theme.light">Light</span>
+            </button>
+          </div>
+        </div>
+        <div class="lang-switch lang-switch--header" role="group" data-i18n-aria="aria.langSwitch" aria-label="Language">
+          <button type="button" class="lang-btn" data-lang="th" aria-pressed="false" title="ไทย"><span class="flag" aria-hidden="true">🇹🇭</span><span class="lang-code">TH</span></button>
+          <button type="button" class="lang-btn" data-lang="en" aria-pressed="true" title="English"><span class="flag" aria-hidden="true">🇬🇧</span><span class="lang-code">EN</span></button>
+        </div>
+      </div>
+      <a class="nav-cta" href="#inquiry" data-i18n="nav.cta">Book now</a>
+      <button class="menu-btn" id="menuBtn" data-i18n-aria="aria.menuOpen" aria-label="Open menu" aria-expanded="false" aria-controls="mobileNav">
+        <span class="menu-btn__bars" aria-hidden="true"><span></span><span></span><span></span></span>
+      </button>
+    </div>
+  </header>
+  <div class="menu-scrim" id="menuScrim" hidden></div>
+  <aside class="mobile-nav" id="mobileNav" role="dialog" aria-modal="true" data-i18n-aria="aria.menuDialog" aria-label="Menu" hidden>
+    <div class="mobile-nav__inner">
+      <div class="mobile-nav__top">
+        <a href="#top" class="mobile-nav__mark" tabindex="-1" aria-hidden="true">
+          <img class="logo-img logo-img--ds" src="logo.png" width="160" height="30" alt="" decoding="async" />
+        </a>
+        <button type="button" class="mobile-nav__close" id="menuClose" data-i18n="menu.close" data-i18n-aria="aria.menuClose" aria-label="Close menu">Close</button>
+      </div>
+      <nav class="mobile-nav__links" data-i18n-aria="aria.primaryNav" aria-label="Primary">
+        <a class="mobile-nav__link" href="#amenities" data-i18n="nav.amenities">Amenities</a>
+        <a class="mobile-nav__link" href="#rooms" data-i18n="nav.rooms">Rooms</a>
+        <a class="mobile-nav__link" href="#gallery" data-i18n="nav.gallery">Gallery</a>
+        <a class="mobile-nav__link" href="#about" data-i18n="nav.about">About</a>
+        <a class="mobile-nav__link" href="#inquiry" data-i18n="nav.book">Book</a>
+        <a class="mobile-nav__link" href="#contact" data-i18n="nav.contact">Contact</a>
+        <a class="mobile-nav__link" href="compare.html" data-i18n="nav.compare">Compare live vs upgrade</a>
+      </nav>
+      <div class="mobile-nav__lang">
+        <div class="lang-switch lang-switch--sheet" role="group" data-i18n-aria="aria.langSwitch" aria-label="Language">
+          <button type="button" class="lang-btn" data-lang="th" aria-pressed="false" title="ไทย"><span class="flag" aria-hidden="true">🇹🇭</span><span class="lang-code">TH</span></button>
+          <button type="button" class="lang-btn" data-lang="en" aria-pressed="true" title="English"><span class="flag" aria-hidden="true">🇬🇧</span><span class="lang-code">EN</span></button>
+        </div>
+        <div class="theme-switch theme-switch--sheet" role="group" data-i18n-aria="theme.appearance" aria-label="Appearance">
+          <span class="theme-switch__label" data-i18n="theme.appearance">Appearance</span>
+          <div class="theme-switch__seg" role="presentation">
+            <button type="button" class="theme-btn" data-theme-set="dark" aria-pressed="true">
+              <svg class="theme-btn__icon" width="14" height="14" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 14.5A8.5 8.5 0 1 1 9.5 3 7 7 0 0 0 21 14.5z"/></svg>
+              <span class="theme-btn__text" data-i18n="theme.dark">Dark</span>
+            </button>
+            <button type="button" class="theme-btn" data-theme-set="light" aria-pressed="false">
+              <svg class="theme-btn__icon" width="14" height="14" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+              <span class="theme-btn__text" data-i18n="theme.light">Light</span>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="mobile-nav__foot">
+        <a class="mobile-nav__cta mobile-nav__cta--brand" href="#inquiry" data-i18n="nav.cta">Book now</a>
+        <div class="mobile-nav__secondary">
+          <a href="tel:+6638235871">+66 38 235 871</a>
+          <a href="mailto:rsvn@dor-shadaresort.com">rsvn@dor-shadaresort.com</a>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <main id="top">
+    <!-- CINEMATIC HERO: photo-dominant + RIGHT glass reservation panel -->
+    <section class="cin-hero">
+      <div class="container">
+        <div class="cin-hero__frame">
+          <img class="cin-hero__photo" src="images/web-hero-pool-sea.jpg" width="900" height="675"
+            data-i18n-alt="alt.hero" alt="Dor-Shada Resort outdoor pool with sea beyond the palms"
+            fetchpriority="high" decoding="async" />
+          <div class="cin-hero__veil" aria-hidden="true"></div>
+          <div class="cin-hero__copy reveal">
+            <span class="cin-eyebrow"><span class="cin-dot"></span> <span data-i18n="hero.pill">Na Jomtien · Sukhumvit Road · By the sea</span></span>
+            <h1 data-i18n-html="hero.title">Dor-Shada <em>Resort by The Sea</em></h1>
+            <p class="cin-tagline" data-i18n="hero.tagline">Thai-style calm between garden, pool, and sea</p>
+            <div class="cin-stats">
+              <div class="cin-stat glass"><strong data-i18n="stat.roomsStrong">10</strong><span data-i18n="stat.roomsSpan">room &amp; suite types</span></div>
+              <div class="cin-stat glass"><strong data-i18n="stat.poolStrong">Pool</strong><span data-i18n="stat.poolSpan">&amp; poolside bar</span></div>
+              <div class="cin-stat glass"><strong data-i18n="stat.spaStrong">Spa</strong><span data-i18n="stat.spaSpan">&amp; fitness</span></div>
+            </div>
+          </div>
+          <aside class="cin-reserve glass">
+            <p class="cin-reserve__label" data-i18n="inq.label">Book</p>
+            <strong data-i18n="float.a.strong">Pool &amp; sea breeze</strong>
+            <span data-i18n="float.a.span">Outdoor pool with loungers in lush Na Jomtien greenery</span>
+            <p class="cin-reserve__lead" data-i18n="hero.lead">Nestled in lush greenery in Na Jomtien, Dor-Shada Resort offers 5-star accommodations with modern Thai-style rooms, private balconies, an outdoor pool with poolside bar, full-service spa, fitness center, and beachfront dining with sweeping sea views.</p>
+            <a class="btn btn-primary" href="#inquiry" data-i18n="hero.ctaBook">Send booking inquiry</a>
+            <a class="btn btn-ghost" href="tel:+6638235871">+66 38 235 871</a>
+            <a class="btn btn-ghost" href="mailto:rsvn@dor-shadaresort.com" data-i18n="hero.ctaEmail">Email reservations</a>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <div class="loc-ribbon" id="location">
+      <div class="container reveal">
+        <p data-i18n-html="loc.band">On <strong>Sukhumvit Road</strong>, Tambon Na Chom Thian, Chonburi 20250 — a green Na Jomtien retreat with pool, spa, and sea-facing dining.</p>
+      </div>
+    </div>
+
+    <!-- AMENITY ICON RAIL (before rooms — different rhythm) -->
+    <section class="amenity-ribbon" id="amenities">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="section-label" data-i18n="fac.label">Amenities</span>
+          <h2 data-i18n="fac.title">Resort facilities</h2>
+          <p data-i18n="fac.lead">From the resort’s published About Us — pool, spa, fitness, dining, and practical conveniences.</p>
+        </div>
+        <div class="icon-rail reveal">
+          <div class="icon-rail__item glass"><svg class="rail-icon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M2 16c1.5-1 3-1 4.5 0s3 1 4.5 0 3-1 4.5 0 3 1 4.5 0"/><path d="M2 20c1.5-1 3-1 4.5 0s3 1 4.5 0 3-1 4.5 0 3 1 4.5 0"/><path d="M6 6v6"/><path d="M10 5v7"/><path d="M14 6v6"/><circle cx="6" cy="4.5" r="1.25"/><circle cx="10" cy="3.5" r="1.25"/><circle cx="14" cy="4.5" r="1.25"/></svg><span data-i18n="fac.pool">Outdoor pool &amp; poolside bar</span></div>
+          <div class="icon-rail__item glass"><svg class="rail-icon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21c-4.5-3.2-7.5-6.4-7.5-10A4.5 4.5 0 0 1 12 7.2 4.5 4.5 0 0 1 19.5 11c0 3.6-3 6.8-7.5 10z"/><path d="M12 7.2V3.5"/><path d="M9.5 5.2c.8-.9 1.7-1.4 2.5-1.7"/></svg><span data-i18n="fac.spa">Full-service spa</span></div>
+          <div class="icon-rail__item glass"><svg class="rail-icon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8v8"/><path d="M18 8v8"/><path d="M3.5 10v4"/><path d="M20.5 10v4"/><path d="M6 12h12"/><path d="M9 10v4"/><path d="M15 10v4"/></svg><span data-i18n="fac.fitness">Fitness center</span></div>
+          <div class="icon-rail__item glass"><svg class="rail-icon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M7 3v8a2 2 0 0 0 2 2v8"/><path d="M5 3v4"/><path d="M9 3v4"/><path d="M16 3v7a2 2 0 0 0 2 2"/><path d="M17 12v9"/></svg><span data-i18n="fac.restaurant">Beachfront restaurant · Thai &amp; international</span></div>
+          <div class="icon-rail__item glass"><svg class="rail-icon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2c2.5 3.2 1.8 5.4 0 7.2-1.5 1.5-2 2.8-2 4.3a4 4 0 0 0 8 0c0-2.2-1-3.8-2.5-5.3"/><path d="M9 21h6"/><path d="M10 18h4"/></svg><span data-i18n="fac.bbq">Barbecue arrangements</span></div>
+          <div class="icon-rail__item glass"><svg class="rail-icon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M4 17h16"/><path d="M5 17a7 7 0 0 1 14 0"/><path d="M12 6v2"/><circle cx="12" cy="4.5" r="1"/><path d="M3 20h18"/></svg><span data-i18n="fac.roomService">Room service</span></div>
+          <div class="icon-rail__item glass"><svg class="rail-icon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5a9 9 0 0 1 14 0"/><path d="M8.5 15.5a5 5 0 0 1 7 0"/><circle cx="12" cy="19" r="1.25" fill="currentColor" stroke="none"/></svg><span data-i18n="fac.wifi">Complimentary WiFi</span></div>
+          <div class="icon-rail__item glass"><svg class="rail-icon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M9 17V7h4.2a3.2 3.2 0 0 1 0 6.4H9"/></svg><span data-i18n="fac.parking">Free on-site parking</span></div>
+          <div class="icon-rail__item glass"><svg class="rail-icon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M9 4.5 3.5 7v12.5L9 17l6 2.5L20.5 17V4.5L15 7 9 4.5z"/><path d="M9 4.5v12.5"/><path d="M15 7v12.5"/></svg><span data-i18n="fac.tour">Tour desk</span></div>
+        </div>
+        <div class="amenity-photos reveal">
+          <img src="images/web-pool-loungers.jpg" alt="" data-i18n-alt="alt.poolLoungers" width="400" height="267" loading="lazy" decoding="async" />
+          <img src="images/web-spa-area.jpg" alt="" data-i18n-alt="alt.spa" width="400" height="267" loading="lazy" decoding="async" />
+          <img src="images/web-restaurant-sea.jpg" alt="" data-i18n-alt="alt.restaurant" width="400" height="225" loading="lazy" decoding="async" />
+        </div>
+      </div>
+    </section>
+
+    <!-- CINEMA ROOM CARDS — horizontal scroll -->
+    <section class="cinema-rooms" id="rooms">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="section-label" data-i18n="rooms.label">Rooms &amp; suites</span>
+          <h2 data-i18n="rooms.title">Modern Thai-style stays</h2>
+          <p data-i18n="rooms.lead">Ten room and suite types from the live site — air-conditioned, soundproofed options with terraces or balconies overlooking garden, pool, or sea.</p>
+        </div>
+        <div class="feat-ribbon reveal">
+          <span class="chip glass" data-i18n="feat.ac.h">Air conditioning</span>
+          <span class="chip glass" data-i18n="feat.tv.h">Flat-screen cable TV</span>
+          <span class="chip glass" data-i18n="feat.bath.h">Private bathrooms</span>
+          <span class="chip glass" data-i18n="feat.safe.h">In-room safe</span>
+          <span class="chip glass" data-i18n="feat.balcony.h">Private balconies</span>
+          <span class="chip glass" data-i18n="feat.wifi.h">Complimentary WiFi</span>
+        </div>
+        <h3 class="cinema-sub reveal" data-i18n="rooms.typesTitle">Room types from the live site</h3>
+      </div>
+      <div class="cinema-track reveal" tabindex="0" data-i18n-aria="aria.gallery" aria-label="Room types">
+          <article class="cinema-card glass">
+            <div class="cinema-card__media"><img src="images/web-room-family.jpg" width="600" height="412" loading="lazy" decoding="async" data-i18n-alt="alt.roomFamily" alt="Deluxe family room with king bed and bunk bed" /></div>
+            <div class="cinema-card__body">
+              <h3 data-i18n="room.family.h">Deluxe family</h3>
+              <p data-i18n="room.family.p">Generously sized family room with air conditioning and soundproof walls, terrace with garden views, private bathroom with walk-in shower, 1 king bed and bunk bed.</p>
+              <div class="room-meta"><span class="chip" data-i18n="room.chip.garden">Garden terrace</span><span class="chip" data-i18n="room.chip.family">Family</span></div>
+            </div>
+          </article>
+          <article class="cinema-card glass">
+            <div class="cinema-card__media"><img src="images/web-room-grand.jpg" width="600" height="400" loading="lazy" decoding="async" data-i18n-alt="alt.roomGrand" alt="Deluxe Grand Suite living space" /></div>
+            <div class="cinema-card__body">
+              <h3 data-i18n="room.grand.h">Deluxe Grand Suite</h3>
+              <p data-i18n="room.grand.p">Living room, two bedrooms, two bathrooms with walk-in showers and toiletries, kitchenette with refrigerator and microwave, tea & coffee, flat-screen cable TV, garden views, king bed plus a 4-foot bed.</p>
+              <div class="room-meta"><span class="chip" data-i18n="room.chip.suite">Suite</span><span class="chip" data-i18n="room.chip.kitchenette">Kitchenette</span></div>
+            </div>
+          </article>
+          <article class="cinema-card glass">
+            <div class="cinema-card__media"><img src="images/web-room-deluxe.jpg" width="600" height="443" loading="lazy" decoding="async" data-i18n-alt="alt.roomDeluxe" alt="Deluxe room with terrace" /></div>
+            <div class="cinema-card__body">
+              <h3 data-i18n="room.deluxe.h">Deluxe room</h3>
+              <p data-i18n="room.deluxe.p">Spacious room with air conditioning and soundproof walls, terrace with garden views, private bathroom with walk-in shower, two beds or 1 king bed.</p>
+              <div class="room-meta"><span class="chip" data-i18n="room.chip.garden">Garden terrace</span></div>
+            </div>
+          </article>
+          <article class="cinema-card glass">
+            <div class="cinema-card__media"><img src="images/web-room-dor-suite.jpg" width="600" height="400" loading="lazy" decoding="async" data-i18n-alt="alt.roomDor" alt="Dor-Shada Suite with sea-view balcony" /></div>
+            <div class="cinema-card__body">
+              <h3 data-i18n="room.dor.h">Dor-Shada Suite 1 bedroom</h3>
+              <p data-i18n="room.dor.p">Wooden flooring, private balcony with sea views, and a bathroom featuring a Jacuzzi bathtub.</p>
+              <div class="room-meta"><span class="chip" data-i18n="room.chip.sea">Sea view</span><span class="chip" data-i18n="room.chip.jacuzzi">Jacuzzi</span></div>
+            </div>
+          </article>
+          <article class="cinema-card glass">
+            <div class="cinema-card__media"><img src="images/web-room-elegant.jpg" width="600" height="434" loading="lazy" decoding="async" data-i18n-alt="alt.roomElegant" alt="Elegant Suite with spa bath" /></div>
+            <div class="cinema-card__body">
+              <h3 data-i18n="room.elegant.h">Elegant Suite 2 bedrooms</h3>
+              <p data-i18n="room.elegant.p">Spa bath, living room, two bedrooms, two bathrooms with walk-in showers, kitchenette with refrigerator and microwave, minibar, tea & coffee, flat-screen cable TV, stunning sea views, 2 king beds.</p>
+              <div class="room-meta"><span class="chip" data-i18n="room.chip.sea">Sea view</span><span class="chip" data-i18n="room.chip.spaBath">Spa bath</span></div>
+            </div>
+          </article>
+          <article class="cinema-card glass">
+            <div class="cinema-card__media"><img src="images/web-room-new-deluxe.jpg" width="600" height="400" loading="lazy" decoding="async" data-i18n-alt="alt.roomNew" alt="New Deluxe room" /></div>
+            <div class="cinema-card__body">
+              <h3 data-i18n="room.new.h">New Deluxe room</h3>
+              <p data-i18n="room.new.p">Spacious room with air conditioning and soundproof walls, terrace with garden views, private bathroom with walk-in shower, two beds or 1 king bed.</p>
+              <div class="room-meta"><span class="chip" data-i18n="room.chip.garden">Garden terrace</span></div>
+            </div>
+          </article>
+          <article class="cinema-card glass">
+            <div class="cinema-card__media"><img src="images/web-room-pool-access.jpg" width="600" height="450" loading="lazy" decoding="async" data-i18n-alt="alt.roomPoolAccess" alt="Pool Access room balcony" /></div>
+            <div class="cinema-card__body">
+              <h3 data-i18n="room.poolAccess.h">Pool Access room</h3>
+              <p data-i18n="room.poolAccess.p">First-floor room with a large private balcony and direct access to the pool from the balcony.</p>
+              <div class="room-meta"><span class="chip" data-i18n="room.chip.poolAccess">Pool access</span></div>
+            </div>
+          </article>
+          <article class="cinema-card glass">
+            <div class="cinema-card__media"><img src="images/web-room-pool-view.jpg" width="600" height="442" loading="lazy" decoding="async" data-i18n-alt="alt.roomPoolFamily" alt="Pool Access family room" /></div>
+            <div class="cinema-card__body">
+              <h3 data-i18n="room.poolFamily.h">Pool Access room family</h3>
+              <p data-i18n="room.poolFamily.p">Family suite with air conditioning and soundproof walls, terrace with pool views, private bathroom with walk-in shower, 1 king bed and bunk bed.</p>
+              <div class="room-meta"><span class="chip" data-i18n="room.chip.pool">Pool view</span><span class="chip" data-i18n="room.chip.family">Family</span></div>
+            </div>
+          </article>
+          <article class="cinema-card glass">
+            <div class="cinema-card__media"><img src="images/web-room-suite.jpg" width="600" height="429" loading="lazy" decoding="async" data-i18n-alt="alt.roomPoolViewFamily" alt="Pool View family room" /></div>
+            <div class="cinema-card__body">
+              <h3 data-i18n="room.poolViewFamily.h">Pool View room family</h3>
+              <p data-i18n="room.poolViewFamily.p">Family room with air conditioning and soundproof walls, terrace with sea and pool views, private bathroom with walk-in shower, 1 king bed and bunk bed.</p>
+              <div class="room-meta"><span class="chip" data-i18n="room.chip.seaPool">Sea & pool</span><span class="chip" data-i18n="room.chip.family">Family</span></div>
+            </div>
+          </article>
+          <article class="cinema-card glass">
+            <div class="cinema-card__media"><img src="images/web-room-twin.jpg" width="600" height="441" loading="lazy" decoding="async" data-i18n-alt="alt.roomPoolBalcony" alt="Pool View room with balcony" /></div>
+            <div class="cinema-card__body">
+              <h3 data-i18n="room.poolBalcony.h">Pool View room with balcony</h3>
+              <p data-i18n="room.poolBalcony.p">Air conditioning and soundproof walls, terrace with sea and pool views, private bathroom with walk-in shower, 1 king bed or twin beds.</p>
+              <div class="room-meta"><span class="chip" data-i18n="room.chip.seaPool">Sea & pool</span><span class="chip" data-i18n="room.chip.balcony">Balcony</span></div>
+            </div>
+          </article>
+      </div>
+    </section>
+
+    <!-- BENTO GALLERY -->
+    <section class="bento-gal" id="gallery">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="section-label" data-i18n="gal.label">Gallery</span>
+          <h2 data-i18n="gal.title">Property &amp; rooms</h2>
+          <p data-i18n="gal.lead">Real photos from dor-shadaresort.com — pool, grounds, and guest rooms.</p>
+        </div>
+        <div class="bento reveal" data-i18n-aria="aria.gallery" aria-label="Resort photo gallery">
+          <figure class="tall"><img src="images/web-hero-pool-sunset.jpg" alt="" data-i18n-alt="alt.gal1" loading="lazy" decoding="async" /></figure>
+          <figure><img src="images/web-pool-naga.jpg" alt="" data-i18n-alt="alt.gal2" loading="lazy" decoding="async" /></figure>
+          <figure><img src="images/web-pool-wide.jpg" alt="" data-i18n-alt="alt.gal3" loading="lazy" decoding="async" /></figure>
+          <figure><img src="images/web-sea-view.jpg" alt="" data-i18n-alt="alt.gal4" loading="lazy" decoding="async" /></figure>
+          <figure><img src="images/web-exterior-1.jpg" alt="" data-i18n-alt="alt.gal5" loading="lazy" decoding="async" /></figure>
+          <figure class="tall"><img src="images/web-pool-vertical.jpg" alt="" data-i18n-alt="alt.gal6" loading="lazy" decoding="async" /></figure>
+          <figure><img src="images/web-gallery-dining.jpg" alt="" data-i18n-alt="alt.gal7" loading="lazy" decoding="async" /></figure>
+          <figure><img src="images/web-gallery-room.jpg" alt="" data-i18n-alt="alt.gal8" loading="lazy" decoding="async" /></figure>
+          <figure><img src="images/web-gallery-balcony.jpg" alt="" data-i18n-alt="alt.gal9" loading="lazy" decoding="async" /></figure>
+          <figure><img src="images/web-gallery-grounds.jpg" alt="" data-i18n-alt="alt.gal10" loading="lazy" decoding="async" /></figure>
+          <figure><img src="images/web-garden-path.jpg" alt="" data-i18n-alt="alt.gal11" loading="lazy" decoding="async" /></figure>
+          <figure><img src="images/web-pool-evening.jpg" alt="" data-i18n-alt="alt.gal12" loading="lazy" decoding="async" /></figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="about-cin" id="about">
+      <div class="container about-cin__grid">
+        <div class="about-cin__visual reveal">
+          <img src="images/web-gallery-pool-lush.jpg" width="700" height="560" loading="lazy" decoding="async" data-i18n-alt="alt.about" alt="Dor-Shada Resort pool nestled in tropical greenery" />
+        </div>
+        <div class="reveal delay-1">
+          <span class="section-label" data-i18n="about.label">About us</span>
+          <h2 data-i18n="about.title">A green Na Jomtien retreat</h2>
+          <p data-i18n="about.p1">Nestled in lush greenery, Dor-Shada Resort offers 5-star accommodations with cable flat-screen TVs and complimentary WiFi. Located in Na Jomtien, with an outdoor pool with a poolside bar, and a full-service spa.</p>
+          <p data-i18n="about.p2">The modern Thai-style rooms come with private balconies and spacious seating areas with sofas. Each room is equipped with a safe, refrigerator, and a private bathroom that includes a bathtub and hairdryer.</p>
+          <p data-i18n="about.p3">Guests can stay active at the well-equipped fitness center. The resort also provides a tour desk and free on-site parking.</p>
+          <p data-i18n="about.p4">Enjoy Thai and international cuisine with sweeping sea views at the beachfront restaurant, or arrange a barbecue party. Room service is also available for added convenience.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- INQUIRY -->
+    <section class="inquiry" id="inquiry">
+      <div class="container inquiry-wrap">
+        <div class="inquiry-intro reveal">
+          <span class="section-label light" data-i18n="inq.label">Book</span>
+          <h2 data-i18n="inq.title">Reservation inquiry</h2>
+          <p data-i18n="inq.lead">Tell us your dates — call or email reservations, or send the form below.</p>
+          <a class="btn btn-cream-inline" href="tel:+6638235871">+66 38 235 871</a>
+          <a class="btn btn-outline btn-on-dark" href="mailto:rsvn@dor-shadaresort.com" data-i18n="hero.ctaEmail">Email reservations</a>
+        </div>
+        <form class="inquiry-form glass reveal delay-1" id="inquiryForm" action="#" method="get">
+          <div class="form-row">
+            <div class="field"><label for="name" data-i18n="form.name">Full name</label><input id="name" name="name" type="text" autocomplete="name" required data-i18n-placeholder="form.namePh" placeholder="Your name" /></div>
+            <div class="field"><label for="email" data-i18n="form.email">Email</label><input id="email" name="email" type="email" autocomplete="email" required data-i18n-placeholder="form.emailPh" placeholder="you@email.com" /></div>
+          </div>
+          <div class="form-row">
+            <div class="field"><label for="phone" data-i18n="form.phone">Phone</label><input id="phone" name="phone" type="tel" autocomplete="tel" data-i18n-placeholder="form.phonePh" placeholder="+66 …" /></div>
+            <div class="field"><label for="guests" data-i18n="form.guests">Guests</label>
+              <select id="guests" name="guests">
+                <option value="1" data-i18n="form.g1">1 guest</option>
+                <option value="2" selected data-i18n="form.g2">2 guests</option>
+                <option value="3" data-i18n="form.g3">3 guests</option>
+                <option value="4" data-i18n="form.g4">4+ guests</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="field"><label for="checkin" data-i18n="form.checkin">Check-in</label><input id="checkin" name="checkin" type="date" /></div>
+            <div class="field"><label for="checkout" data-i18n="form.checkout">Check-out</label><input id="checkout" name="checkout" type="date" /></div>
+          </div>
+          <div class="field"><label for="message" data-i18n="form.message">Message / room preferences</label><textarea id="message" name="message" rows="4" data-i18n-placeholder="form.messagePh" placeholder="Room type preferences or questions…"></textarea></div>
+          <button type="submit" class="btn btn-cream" data-i18n="form.submit">Send inquiry</button>
+          <p class="form-note" data-i18n="form.note">Demo only — inquiry submit is not connected yet. Live booking is wired after they invest. Call or email reservations anytime.</p>
+        </form>
+      </div>
+    </section>
+
+    <section class="contact-cin" id="contact">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="section-label" data-i18n="contact.label">Contact</span>
+          <h2 data-i18n="contact.title">Reservations &amp; welcome</h2>
+          <p data-i18n="contact.lead">Reach the resort on Sukhumvit Road, Na Chom Thian.</p>
+        </div>
+        <div class="contact-tri reveal">
+          <div class="contact-tile glass">
+            <h3 data-i18n="contact.address">Address</h3>
+            <p>ถนน สุขุมวิท<br />Tambon Na Chom Thian<br />จ.ชลบุรี 20250<br />Thailand</p>
+            <a href="https://maps.google.com/maps/place/Dor-Shada+Resort+by+The+Sea/@12.83238490,100.90962100,18z" target="_blank" rel="noopener noreferrer" data-i18n="contact.map">Open in Google Maps</a>
+          </div>
+          <div class="contact-tile glass">
+            <h3 data-i18n="contact.phone">Telephone</h3>
+            <a href="tel:+6638235871">+66 38 235 871</a>
+            <p class="fax" data-i18n="contact.phoneNote">As published on dor-shadaresort.com</p>
+          </div>
+          <div class="contact-tile glass">
+            <h3 data-i18n="contact.emailSocial">Email &amp; social</h3>
+            <a href="mailto:rsvn@dor-shadaresort.com">rsvn@dor-shadaresort.com</a>
+            <div class="social-row">
+              <a href="https://www.facebook.com/dorshadaresortbythesea" target="_blank" rel="noopener noreferrer">Facebook</a>
+              <a href="https://www.instagram.com/dorshadaresort" target="_blank" rel="noopener noreferrer">Instagram</a>
+            </div>
+          </div>
+        </div>
+        <div class="contact-actions reveal">
+          <a class="btn btn-primary" href="tel:+6638235871" data-i18n="contact.call">Call resort</a>
+          <a class="btn btn-outline" href="mailto:rsvn@dor-shadaresort.com" data-i18n="contact.emailUs">Email reservations</a>
+          <a class="btn btn-outline" href="#inquiry" data-i18n="contact.bookCta">Booking inquiry</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="extras" id="launch">
+      <div class="container extras-grid">
+        <div class="extras-card glass reveal">
+          <h2 data-i18n="extras.launchTitle">Launch checklist</h2>
+          <p class="extras-intro" data-i18n="extras.launchIntro">What’s included in the build package after they invest — not live changes yet.</p>
+          <ul class="extras-list">
+            <li><strong data-i18n="extras.li1Strong">Google Business Profile cleanup</strong><span data-i18n="extras.li1Rest"> — categories, photos, hours, and description polish as a post-invest / launch service (we do not claim their live GBP was already changed).</span></li>
+            <li><strong data-i18n="extras.li2Strong">Thai + English SEO basics</strong><span data-i18n="extras.li2Rest"> — bilingual title &amp; meta description, hreflang-ready markup, meaningful image alt text in EN + TH.</span></li>
+            <li><strong data-i18n="extras.li3Strong">Inquiry &amp; booking CTAs</strong><span data-i18n="extras.li3Rest"> — phone, email, and reservation form wired when back-end goes live.</span></li>
+          </ul>
+          <p class="seo-note"><strong data-i18n="extras.seoStrong">SEO note (EN / TH):</strong><span data-i18n="extras.seoRest"> Page title and meta description update with the language toggle. Key image alt text is bilingual.</span></p>
+        </div>
+        <div class="extras-card glass care-card reveal delay-1">
+          <h2 data-i18n="extras.careTitle">After go-live · Monthly site care</h2>
+          <p data-i18n="extras.careLead">A simple monthly care plan keeps the resort site fresh and reliable:</p>
+          <ul class="extras-list">
+            <li data-i18n="extras.care1">Content updates &amp; small edits</li>
+            <li data-i18n="extras.care2">Uptime checks</li>
+            <li data-i18n="extras.care3">Backup of site files</li>
+            <li data-i18n="extras.care4">Minor SEO / listing tweaks as needed</li>
+          </ul>
+          <p class="care-price" data-i18n="extras.carePrice">Priced &amp; connected after they invest.</p>
+          <a class="btn btn-primary" href="#inquiry" data-i18n="extras.careCta">Ask about monthly care</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <p data-i18n-html="footer.tagline"><strong>Dor-Shada Resort by The Sea</strong> — Na Jomtien</p>
+        <p class="footer-addr">ถนน สุขุมวิท · Tambon Na Chom Thian · จ.ชลบุรี 20250</p>
+        <p class="footer-demo" data-i18n="footer.demo">Front-end demo — bookings/payments not connected yet; paid back-end after they invest. Photos &amp; copy from dor-shadaresort.com.</p>
+        <a href="compare.html" data-i18n="footer.compare">Compare live vs upgrade →</a>
+      </div>
+      <div class="vantage-attr">
+        <img src="images/vantage.png" alt="Vantage" width="120" height="28" />
+        <span><strong>Vantage</strong> <span data-i18n="footer.vantage">— demo redesign by Vantage. Brand wordmark above is Dor-Shada; Vantage is agency attribution only.</span></span>
+      </div>
+    </div>
+  </footer>
+
+  <nav class="mobile-cta" aria-label="Quick contact">
+    <a class="mobile-cta__wa" href="mailto:rsvn@dor-shadaresort.com" data-i18n="sticky.email">Email</a>
+    <a class="mobile-cta__call" href="tel:+6638235871" data-i18n="sticky.call">Call</a>
+  </nav>
+
+  <script src="script.js"></script>
+</body>
+</html>

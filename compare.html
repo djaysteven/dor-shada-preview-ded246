@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta name="robots" content="noindex,nofollow,noarchive">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem("pattaya-demo-theme");
+        if (t !== "light" && t !== "dark") t = "dark";
+        document.documentElement.setAttribute("data-theme", t);
+        document.documentElement.style.colorScheme = t;
+      } catch (e) {
+        document.documentElement.setAttribute("data-theme", "dark");
+        document.documentElement.style.colorScheme = "dark";
+      }
+    })();
+  </script>
+  <meta name="color-scheme" content="dark light" />
+  <title>Live site vs upgrade — Dor-Shada Resort by The Sea</title>
+  <meta name="description" content="Side-by-side comparison: live dor-shadaresort.com vs the Dor-Shada Resort upgrade demo." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Sora:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --cream: #0b1618; --sand: #e8b86d; --ink: #f3efe6; --muted: #9eb0a8;
+      --terracotta: #3ecfc0; --ocean: #2aa8a0; --surface: #122326; --bg: #0b1618;
+      --font-d: "DM Serif Display", Georgia, serif; --font-b: "Sora", system-ui, sans-serif;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: var(--font-b); color: var(--ink); background: var(--bg); line-height: 1.5; }
+    a { color: var(--sand); }
+    .top {
+      position: sticky; top: 0; z-index: 50;
+      background: rgba(11,22,24,0.92); backdrop-filter: blur(16px) saturate(1.3); -webkit-backdrop-filter: blur(16px) saturate(1.3);
+      border-bottom: 1px solid rgba(42,168,160,0.15); padding: 0.85rem 1.25rem;
+      display: flex; flex-wrap: wrap; gap: 0.75rem; align-items: center; justify-content: space-between;
+    }
+    .top h1 { font-family: var(--font-d); font-size: 1.25rem; margin: 0; font-weight: 400; }
+    .top-nav { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+    .btn {
+      display: inline-flex; align-items: center; padding: 0.5rem 0.9rem; border-radius: 999px;
+      text-decoration: none; font-weight: 600; font-size: 0.85rem;
+    }
+    .btn-primary { background: var(--terracotta); color: #041216; }
+    .btn-ghost { background: transparent; color: var(--ink); border: 1px solid rgba(243,239,230,0.18); }
+    .intro { max-width: 1100px; margin: 0 auto; padding: 1.5rem 1.25rem 0.5rem; }
+    .intro p { color: var(--muted); margin: 0.4rem 0 0; max-width: 42rem; font-weight: 300; }
+    .badge {
+      display: inline-block; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.06em;
+      text-transform: uppercase; color: var(--ocean); background: rgba(42,168,160,0.14); padding: 0.3rem 0.65rem; border-radius: 999px;
+    }
+    .split { display: grid; gap: 1rem; max-width: 1400px; margin: 0 auto; padding: 1rem 1.25rem 2rem; }
+    @media (min-width: 960px) { .split { grid-template-columns: 1fr 1fr; min-height: 72dvh; } }
+    .panel {
+      background: var(--surface); border-radius: 20px; overflow: hidden;
+      box-shadow: 0 16px 40px rgba(0,0,0,0.35); display: flex; flex-direction: column;
+      border: 1px solid rgba(42,168,160,0.12);
+    }
+    .panel-head {
+      padding: 0.9rem 1.1rem; display: flex; flex-wrap: wrap; gap: 0.5rem; align-items: center;
+      justify-content: space-between; border-bottom: 1px solid rgba(42,168,160,0.1); background: #122326;
+    }
+    .panel-head h2 { margin: 0; font-size: 0.92rem; }
+    .tag { font-size: 0.68rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; padding: 0.25rem 0.5rem; border-radius: 6px; }
+    .tag-old { background: #163036; color: #3ecfc0; }
+    .tag-new { background: rgba(42,168,160,0.15); color: var(--ocean); }
+    .frame-wrap { position: relative; flex: 1; min-height: 520px; background: #0a1618; }
+    .frame-wrap iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; background: #122326; }
+    .fallback {
+      position: relative; padding: 1rem; text-align: center; border-top: 1px solid rgba(42,168,160,0.12);
+      color: var(--muted); font-size: 0.88rem;
+    }
+    .fallback p { margin: 0 0 0.75rem; }
+    .old-bullets, .checklist { max-width: 1100px; margin: 0 auto 2rem; padding: 0 1.25rem; }
+    .old-bullets { display: grid; gap: 1rem; }
+    @media (min-width: 800px) { .old-bullets { grid-template-columns: 1fr 1fr; } }
+    .bullet-card, .checklist-card {
+      background: var(--surface); border-radius: 16px; padding: 1.35rem 1.5rem;
+      box-shadow: 0 12px 32px rgba(0,0,0,0.3); border: 1px solid rgba(42,168,160,0.1);
+    }
+    .bullet-card h3 { margin: 0 0 0.6rem; font-size: 1rem; }
+    .checklist-card h2 { font-family: var(--font-d); margin: 0 0 0.35rem; font-size: 1.5rem; font-weight: 400; }
+    .checklist-card > p { color: var(--muted); margin: 0 0 1.25rem; font-weight: 300; }
+    .bullet-card ul { margin: 0; padding-left: 1.1rem; color: var(--muted); font-size: 0.9rem; font-weight: 300; }
+    .bullet-card li { margin-bottom: 0.3rem; }
+    .checks { list-style: none; padding: 0; margin: 0; display: grid; gap: 0.55rem; }
+    @media (min-width: 700px) { .checks { grid-template-columns: 1fr 1fr; } }
+    .checks li {
+      display: flex; gap: 0.65rem; align-items: flex-start; padding: 0.75rem 0.9rem;
+      background: #0a1618; border-radius: 12px; font-size: 0.9rem; border: 1px solid rgba(232,184,109,0.12);
+    }
+    .checks input { margin-top: 0.2rem; accent-color: var(--sand); width: 1.05rem; height: 1.05rem; }
+    footer { text-align: center; padding: 0 1.25rem 2.5rem; color: var(--muted); font-size: 0.85rem; }
+  
+    .lang-switch {
+      display: inline-flex; align-items: center; gap: 0.2rem; padding: 0.15rem;
+      border-radius: 999px; background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.12);
+    }
+    .lang-btn, .theme-btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: 0.28rem;
+      min-width: 44px; min-height: 44px; padding: 0.35rem 0.55rem; border: 0;
+      border-radius: 999px; background: transparent; color: inherit; cursor: pointer;
+      font: inherit; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.04em; opacity: 0.72;
+      touch-action: manipulation; -webkit-tap-highlight-color: transparent;
+    }
+    .lang-btn .flag { font-size: 1.05rem; line-height: 1; }
+    .lang-btn[aria-pressed="true"], .theme-btn[aria-pressed="true"] { background: rgba(255,255,255,0.14); opacity: 1; }
+    .lang-btn:hover, .lang-btn:focus-visible, .theme-btn:hover, .theme-btn:focus-visible { opacity: 1; }
+
+    /* mobile-polish-compare */
+
+    html {
+      -webkit-text-size-adjust: 100%;
+      text-size-adjust: 100%;
+      overflow-x: clip;
+    }
+    body {
+      overflow-x: clip;
+      max-width: 100%;
+      padding-left: env(safe-area-inset-left, 0px);
+      padding-right: env(safe-area-inset-right, 0px);
+      padding-bottom: env(safe-area-inset-bottom, 0px);
+      -webkit-tap-highlight-color: transparent;
+    }
+    .top {
+      padding-top: calc(0.85rem + env(safe-area-inset-top, 0px));
+      padding-left: calc(1.25rem + env(safe-area-inset-left, 0px));
+      padding-right: calc(1.25rem + env(safe-area-inset-right, 0px));
+    }
+    .btn {
+      min-height: 44px;
+      touch-action: manipulation;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .lang-btn, .theme-btn { touch-action: manipulation; }
+    .frame-wrap {
+      min-height: min(70vh, 520px);
+      min-height: min(62dvh, 520px);
+    }
+    @media (min-width: 960px) {
+      .split { min-height: 72dvh; }
+    }
+    html[lang="th"] body { line-height: 1.7; word-break: normal; overflow-wrap: break-word; line-break: strict; }
+    html[lang="th"] .top h1 { line-height: 1.35; word-break: keep-all; overflow-wrap: normal; line-break: strict; }
+    @media (max-width: 430px) {
+      .top { gap: 0.5rem; }
+      .top h1 { font-size: 1.05rem; }
+      .top-nav { width: 100%; }
+      .top-nav .btn { flex: 1 1 auto; justify-content: center; }
+      .frame-wrap { min-height: min(62dvh, 420px); }
+      .intro, .split, .checklist, .old-bullets, footer {
+        padding-left: max(0.85rem, env(safe-area-inset-left, 0px));
+        padding-right: max(0.85rem, env(safe-area-inset-right, 0px));
+      }
+      .lang-btn .lang-code { display: none; }
+      .lang-btn { min-width: 44px; padding: 0.4rem; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .top {
+        backdrop-filter: blur(8px) saturate(1.1);
+        -webkit-backdrop-filter: blur(8px) saturate(1.1);
+      }
+    }
+
+    [data-theme="light"] {
+      color-scheme: light;
+      --ink: #122022; --muted: #5f6e68; --bg: #f6f3ee; --surface: #ffffff;
+      --terracotta: #14948a; --ocean: #14948a; --sand: #b8915a;
+    }
+    [data-theme="light"] .top {
+      background: color-mix(in srgb, #ffffff 82%, transparent);
+      border-bottom-color: rgba(18,32,34,0.1);
+    }
+    [data-theme="light"] .btn-ghost { border-color: rgba(18,32,34,0.16); }
+    [data-theme="light"] .panel, [data-theme="light"] .check { background: color-mix(in srgb, #ffffff 78%, transparent); border-color: rgba(18,32,34,0.1); }
+    [data-theme="light"] .lang-btn[aria-pressed="true"],
+    [data-theme="light"] .theme-btn[aria-pressed="true"] { background: rgba(18,32,34,0.1); }
+
+  </style>
+</head>
+<body>
+  <div class="top">
+    <h1 data-i18n="chrome.h1">Live site vs upgrade — Dor-Shada Resort by The Sea</h1>
+          <div class="theme-switch" role="group" aria-label="Appearance" style="display:inline-flex;gap:0.25rem;align-items:center;">
+      <button type="button" class="theme-btn" data-theme-set="dark" aria-pressed="true" title="Dark">Dark</button>
+      <button type="button" class="theme-btn" data-theme-set="light" aria-pressed="false" title="Light">Light</button>
+    </div>
+      <div class="lang-switch" role="group" aria-label="Language">
+        <button type="button" class="lang-btn" data-lang="th" aria-pressed="false" title="ไทย"><span class="flag" aria-hidden="true">🇹🇭</span><span class="lang-code">TH</span></button>
+        <button type="button" class="lang-btn" data-lang="en" aria-pressed="true" title="English"><span class="flag" aria-hidden="true">🇬🇧</span><span class="lang-code">EN</span></button>
+      </div>
+
+    <div class="top-nav">
+      <a class="btn btn-primary" href="./index.html" data-i18n="chrome.openNew">Open upgrade demo</a>
+      <a class="btn btn-ghost" href="https://www.dor-shadaresort.com/" target="_blank" rel="noopener noreferrer" data-i18n="chrome.openOld">Open live site</a>
+      <a class="btn btn-ghost" href="../gallery.html" data-i18n="chrome.gallery">Gallery</a>
+    </div>
+  </div>
+
+  <div class="intro">
+    <span class="badge" data-i18n="chrome.badge">Live site vs upgrade review</span>
+    <p data-i18n="chrome.intro">Split view for comparing the live site with the upgrade demo. Tick the checklist against both. If the live iframe is blocked, use Open live site.</p>
+  </div>
+
+  <div class="split">
+    <section class="panel" aria-label="Old live site">
+      <div class="panel-head">
+        <h2 data-i18n="chrome.oldPanel">LIVE — dor-shadaresort.com</h2>
+        <span class="tag tag-old" data-i18n="chrome.tagLive">Live</span>
+      </div>
+      <div class="frame-wrap">
+        <iframe title="Live Dor-Shada Resort website" src="https://www.dor-shadaresort.com/" loading="lazy" referrerpolicy="no-referrer"></iframe>
+      </div>
+      <div class="fallback">
+        <p data-i18n="chrome.fallback">If the live site doesn’t load in the frame (HTTP / X-Frame), open it in a new tab.</p>
+        <a class="btn btn-primary" href="https://www.dor-shadaresort.com/" target="_blank" rel="noopener noreferrer" data-i18n="chrome.openLive">Open live site ↗</a>
+      </div>
+    </section>
+    <section class="panel" aria-label="Upgrade demo">
+      <div class="panel-head">
+        <h2 data-i18n="chrome.newPanel">UPGRADE — front-end demo</h2>
+        <span class="tag tag-new" data-i18n="chrome.tagNew">Upgrade demo</span>
+      </div>
+      <div class="frame-wrap">
+        <iframe title="Dor-Shada Resort upgrade demo" src="./index.html" loading="lazy"></iframe>
+      </div>
+    </section>
+  </div>
+
+  <div class="old-bullets">
+    <div class="bullet-card">
+      <h3>What’s on the live site (public)</h3>
+      <ul>
+        <li>SiteMinder Canvas mid-2010s stock template (text logo, not a graphical mark)</li>
+        <li>Brand: Dor-Shada Resort by The Sea · Na Jomtien / Na Chom Thian</li>
+        <li>Phone +66 38 235 871 · rsvn@dor-shadaresort.com</li>
+        <li>Address: Sukhumvit Rd, Tambon Na Chom Thian, Chonburi 20250</li>
+        <li>10 room/suite types (Deluxe family → Pool View with balcony)</li>
+        <li>About: 5-star accommodation on the live homepage; pool + poolside bar, spa, fitness, beachfront dining, WiFi, parking, tour desk</li>
+        <li>Bento gallery + Facebook / Instagram links · Attractions stub omitted (404)</li>
+        <li>Uniqueness pass: cinematic hero + right reservation panel, amenity icon-rail, cinema room cards (10 types) — distinct from Scandia/EasyKart</li>
+        <li>No public room rates published on the live pages we scraped</li>
+      </ul>
+    </div>
+    <div class="bullet-card">
+      <h3>What this upgrade adds</h3>
+      <ul>
+        <li>Dark-default glass UI · light opt-in · FOUC-safe theme script</li>
+        <li>TH/EN flag selector with persisted language + natural Thai copy</li>
+        <li>Glass morph hamburger + right sheet menu · fit &amp; center header</li>
+        <li>All 10 room types kept with polished public descriptions</li>
+        <li>Real property photos only (from dor-shadaresort.com / imgix)</li>
+        <li>Modernized typographic wordmark (their text logo) — no invented icon</li>
+        <li>compare.html split view + Vantage footer attribution</li>
+        <li>Inquiry form is demo-only (not connected; no outreach)</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="checklist">
+    <div class="checklist-card">
+      <h2>Content fact-check checklist</h2>
+      <p>Tick against the live site. Demo must not invent rates, amenities, or photos.</p>
+      <ul class="checks">
+        <li><input type="checkbox" /> Name: Dor-Shada Resort by The Sea</li>
+        <li><input type="checkbox" /> Phone +66 38 235 871 / 0 38 235 871</li>
+        <li><input type="checkbox" /> Email rsvn@dor-shadaresort.com</li>
+        <li><input type="checkbox" /> Address Sukhumvit / Na Chom Thian / 20250</li>
+        <li><input type="checkbox" /> All 10 room types present with matching descriptions</li>
+        <li><input type="checkbox" /> About amenities: pool, spa, fitness, restaurant, WiFi, parking, tour desk, room service, BBQ</li>
+        <li><input type="checkbox" /> Photos are from their site only (no stock/AI places)</li>
+        <li><input type="checkbox" /> No invented rates (none published publicly)</li>
+        <li><input type="checkbox" /> Social: Facebook dorshadaresortbythesea · Instagram dorshadaresort</li>
+        <li><input type="checkbox" /> TH/EN toggle works; Thai headlines don’t mid-word wrap</li>
+        <li><input type="checkbox" /> Dark default + light toggle; glass menu sheet</li>
+        <li><input type="checkbox" /> Footer credits <strong>Vantage</strong>; no outreach sent</li>
+      </ul>
+    </div>
+  </div>
+
+  <footer>
+    Front-end demo comparison — bookings/payments not connected. <a href="./index.html">Back to upgrade demo</a>
+  </footer>
+
+<script>
+(function () {
+  const LANG_KEY = "pattaya-demo-lang";
+  const dicts = {en: {"meta.title": "Live site vs upgrade — Dor-Shada Resort by The Sea", "chrome.h1": "Live site vs upgrade — Dor-Shada Resort by The Sea", "chrome.openNew": "Open upgrade demo", "chrome.openOld": "Open live site", "chrome.openLive": "Open live site ↗", "chrome.gallery": "Gallery", "chrome.badge": "Live site vs upgrade review", "chrome.intro": "Split view for comparing the live site with the upgrade demo. Tick the checklist against both. If the live iframe is blocked, use Open live site.", "chrome.oldPanel": "LIVE — dor-shadaresort.com", "chrome.tagLive": "Live", "chrome.newPanel": "UPGRADE — front-end demo", "chrome.tagNew": "Upgrade demo", "chrome.fallback": "If the live site blocks embedding, open it in a new tab."}, th: {"meta.title": "เว็บจริงเทียบเวอร์ชันอัปเกรด — ดอร์ชาดา รีสอร์ท บาย เดอะ ซี", "chrome.h1": "เว็บจริงเทียบเวอร์ชันอัปเกรด — ดอร์ชาดา รีสอร์ท บาย เดอะ ซี", "chrome.openNew": "เปิดเดโมอัปเกรด", "chrome.openOld": "เปิดเว็บจริง", "chrome.openLive": "เปิดเว็บจริง ↗", "chrome.gallery": "แกลเลอรี", "chrome.badge": "รีวิวเว็บจริงเทียบอัปเกรด", "chrome.intro": "มุมมองคู่เพื่อเทียบเว็บจริงกับเดโมอัปเกรด ติ๊กเช็กลิสต์กับทั้งสองฝั่ง หาก iframe เว็บจริงถูกบล็อก ให้ใช้ปุ่มเปิดเว็บจริง", "chrome.oldPanel": "เว็บจริง — dor-shadaresort.com", "chrome.tagLive": "ออนไลน์", "chrome.newPanel": "อัปเกรด — เดโมหน้าบ้าน", "chrome.tagNew": "เดโมอัปเกรด", "chrome.fallback": "หากเว็บจริงบล็อกการฝัง กรุณาเปิดในแท็บใหม่"}};
+  function detect() {
+    try { const s = localStorage.getItem(LANG_KEY); if (s === "th" || s === "en") return s; } catch(_){}
+    return ((navigator.language||"en").toLowerCase().startsWith("th")) ? "th" : "en";
+  }
+  function apply(lang) {
+    const dict = dicts[lang]; if (!dict) return;
+    document.documentElement.lang = lang;
+    try { localStorage.setItem(LANG_KEY, lang); } catch(_){}
+    document.querySelectorAll("[data-i18n]").forEach(el => { if (dict[el.getAttribute("data-i18n")] != null) el.textContent = dict[el.getAttribute("data-i18n")]; });
+    document.querySelectorAll("[data-i18n-html]").forEach(el => { if (dict[el.getAttribute("data-i18n-html")] != null) el.innerHTML = dict[el.getAttribute("data-i18n-html")]; });
+    if (dict["meta.title"]) document.title = dict["meta.title"];
+    document.querySelectorAll(".lang-switch .lang-btn").forEach(btn => btn.setAttribute("aria-pressed", String(btn.getAttribute("data-lang") === lang)));
+  }
+  apply(detect());
+  document.querySelectorAll(".lang-switch .lang-btn").forEach(btn => btn.addEventListener("click", () => {
+    const next = btn.getAttribute("data-lang");
+    if (next) apply(next);
+  }));
+})();
+</script>
+
+
+<script>
+(function(){
+  var KEY="pattaya-demo-theme";
+  function apply(t){
+    t = t==="light"?"light":"dark";
+    document.documentElement.setAttribute("data-theme", t);
+    document.documentElement.style.colorScheme = t;
+    try{localStorage.setItem(KEY,t);}catch(e){}
+    document.querySelectorAll(".theme-btn").forEach(function(b){
+      b.setAttribute("aria-pressed", String(b.getAttribute("data-theme-set")===t));
+    });
+  }
+  apply(document.documentElement.getAttribute("data-theme")||"dark");
+  document.querySelectorAll(".theme-btn").forEach(function(b){
+    b.addEventListener("click", function(){ apply(b.getAttribute("data-theme-set")); });
+  });
+})();
+</script>
+</body>
+</html>
